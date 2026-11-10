@@ -210,33 +210,25 @@
     max-width:520px;margin:0 auto;
   }
 
-  /* ---------- ФОРМА ---------- */
-  .form-wrap{max-width:520px;margin:0 auto;text-align:left;}
-  .field{margin-bottom:18px;}
-  .field label{
-    display:block;font-size:.78rem;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--muted);margin-bottom:7px;
+  /* ---------- КНОПКА НА ФОРМУ ---------- */
+  .btn-form {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 40px;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.25s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
   }
-  .field input[type=text],.field textarea{
-    width:100%;padding:13px 15px;
-    border:1px solid var(--line);background:#fff;
-    font-family:'Montserrat',sans-serif;font-size:1rem;
-    color:var(--text);border-radius:2px;transition:border-color .2s;
+  .btn-form:hover {
+    background: var(--pink-dark);
   }
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--pink);}
-  .radio-row{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
-  .radio-row label{
-    display:flex;align-items:center;gap:10px;font-size:.95rem;
-    color:var(--text);letter-spacing:0;text-transform:none;cursor:pointer;
-  }
-  input[type=radio]{accent-color:var(--pink);width:18px;height:18px;}
-  button{
-    width:100%;padding:16px;background:var(--pink);color:#fff;
-    border:none;font-family:'Montserrat',sans-serif;font-size:.85rem;
-    letter-spacing:.22em;text-transform:uppercase;cursor:pointer;
-    transition:background .25s;margin-top:6px;
-  }
-  button:hover{background:var(--pink-dark);}
 
   .note{
     background:#f4ece3;border-left:3px solid var(--pink);
@@ -244,19 +236,6 @@
     max-width:520px;text-align:left;font-size:.9rem;
   }
   .note b{color:var(--pink-dark);}
-
-  .alert{
-    display:none;background:#fbe7ea;color:#a94e5e;
-    border:1px solid #eec3ca;padding:12px 14px;
-    font-size:.9rem;margin-bottom:18px;text-align:center;
-  }
-
-  /* ---------- СПАСИБО ---------- */
-  #thanks{display:none;}
-  #thanks .big{
-    font-family:'Caveat',cursive;font-size:2.4rem;
-    color:var(--pink-dark);margin:0 0 10px;
-  }
 
   footer{
     background:var(--pink-dark);color:#fbe9ec;
@@ -368,57 +347,12 @@
   <section id="rsvp">
     <h2>Подтвердите присутствие</h2>
     <p style="font-size:.9rem;color:var(--muted);max-width:460px;margin:0 auto 24px;">
-      Введите имя и фамилию так, как они указаны в приглашении,<br>
-      и ответьте до <b>1 июня 2027</b>.
+      Пожалуйста, подтвердите своё присутствие до <b>1 июня 2027</b>.<br>
+      Нажмите на кнопку ниже, чтобы заполнить форму.
     </p>
 
-    <div class="form-wrap">
-      <!-- Убрали скрипт, добавили стандартную отправку -->
-      <form action="https://formsubmit.co/anastasia200524@icloud.com" method="POST">
-        
-        <input type="hidden" name="_subject" value="Ответ на свадебное приглашение — Анастасия и Максим">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://anastasia24112005.github.io/wedding/#thanks">
-
-        <div class="field">
-          <label for="guestName">Имя и фамилия</label>
-          <input type="text" id="guestName" name="Имя_Фамилия"
-                 placeholder="Введите ваше имя и фамилию" required>
-        </div>
-
-        <div class="field">
-          <label>Придёте ли вы?</label>
-          <div class="radio-row">
-            <label><input type="radio" name="Присутствие" value="С радостью буду" required> С радостью буду</label>
-            <label><input type="radio" name="Присутствие" value="К сожалению, не смогу" required> К сожалению, не смогу</label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="drinks">Предпочтения по напиткам</label>
-          <input type="text" id="drinks" name="Напитки"
-                 placeholder="Вино, виски, безалкогольные…">
-        </div>
-
-        <div class="field">
-          <label for="food">Аллергии / особенности питания</label>
-          <textarea id="food" name="Питание" rows="2"
-                    placeholder="Если нет — оставьте пустым"></textarea>
-        </div>
-
-        <button type="submit">Отправить ответ</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- СПАСИБО -->
-  <section id="thanks">
-    <p class="big">Спасибо! ❤</p>
-    <p>Ваш ответ отправлен. До встречи 17 июля 2027 года!</p>
-    <p style="margin-top:20px;">
-      <a href="#top" style="color:var(--pink);text-decoration:none;">← вернуться наверх</a>
-    </p>
+    <!-- ВАША ССЫЛКА НА GOOGLE ФОРМУ -->
+    <a href="https://forms.gle/ttohQqU8iU1c3gPd7" target="_blank" class="btn-form">Заполнить форму</a>
   </section>
 
   <footer>
